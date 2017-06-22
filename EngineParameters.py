@@ -5,6 +5,7 @@ Created on Mon Jan 30 17:51:24 2017
 @author: Alison
 """
 import math
+import numpy
 
 #Now to create a text file
 title = 'Engine Parameter Calculator\n\nNomenclature'
@@ -73,9 +74,13 @@ class engine:
            
 #deltaV
     def deltaV(EffectiveExVelC,Mf,Mo):
-        import numpy
         deltaV = EffectiveExVelC*numpy.log(Mo/Mf)
         print(deltaV,'m/s')
+        
+#launchvehiclemassfraction
+    def massfraction(Mo,Mf):
+        m = 1 - (Mf/Mo)
+        print(m)
 
 #propulsive efficiency
     def efficiency(EffectiveExVel,VehicleVel):
